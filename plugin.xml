@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Mybatis Generator Eclipse"
+            id="mybatis-generator-eclipse.commands.category">
+      </category>
+      <command
+            name="Mybatis Generator Eclipse"
+            categoryId="mybatis-generator-eclipse.commands.category"
+            id="mybatis-generator-eclipse.commands.sampleCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="mybatis-generator-eclipse.commands.sampleCommand"
+            class="com.dndc.mybatis.handlers.MybatisHandler">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="mybatis-generator-eclipse.toolbars.sampleToolbar">
+            <command
+                  commandId="mybatis-generator-eclipse.commands.sampleCommand"
+                  icon="icons/mybatis16.png"
+                  tooltip="Mybatis Generator Eclipse"
+                  id="mybatis-generator-eclipse.toolbars.sampleCommand">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.jdt.core.IPackageFragment"
+            id="mybatis-generator-eclipse.contribution1">
+         <menu
+               label="Mybatis Generator"
+               path="additions"
+               id="mybatis-generator-eclipse.menu1">
+         </menu>
+         <action
+         		icon="icons/mybatis16.png"
+               label="Mybatis Generator"
+               class="com.dndc.mybatis.actions.TableAction"
+               menubarPath="mybatis-generator-eclipse.menu1"
+               enablesFor="1"
+               id="mybatis-generator-eclipse.TableAction">
+         </action>
+      </objectContribution>
+   </extension>
+</plugin>

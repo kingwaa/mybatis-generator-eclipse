@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: mybatis-generator-eclipse
+Bundle-SymbolicName: mybatis-generator-eclipse;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: com.dndc.mybatis.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.jdt.core;bundle-version="3.12.3",
+ org.eclipse.core.resources;bundle-version="3.11.1",
+ org.eclipse.ui.editors;bundle-version="3.10.1"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: lib/freemarker-2.3.20.jar,
+ lib/mysql-connector-java-5.1.39.jar,
+ .,
+ lib/mysql-mybatisplus-generator-1.0.1-SNAPSHOT.jar
